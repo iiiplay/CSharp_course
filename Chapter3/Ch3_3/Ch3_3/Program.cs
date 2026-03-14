@@ -4,6 +4,11 @@
     {
         static void Main(string[] args)
         {
+            Random random = new Random();
+            int targetNumber = random.Next(1, 51); // 生 1-50 的
+            Console.WriteLine($"亂數為:{targetNumber}");
+
+
             Console.WriteLine("While迴圈的使用方式");
             int i = 0;
             // while true => break
