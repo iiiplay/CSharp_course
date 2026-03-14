@@ -1,34 +1,18 @@
-﻿namespace Ch3_2
+﻿namespace Ch3_3
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            //雙迴圈
-            int count = 0;
-            for(int i = 1; i < 10; i++)
+            Console.WriteLine("While迴圈的使用方式");
+            int i = 0;
+            // while true => break
+            while (true)
             {
-                for (int j = 1; j < 10; j++)
-                {
-                    count++;   // count=count+1
-                    // {i,-2} 欄位寬度為2，靠左
-                    Console.WriteLine($"{i,-2}x{j,2} ={i*j,3}");
-                }
-                Console.WriteLine("======================");
-            }
-
-            Console.WriteLine($"共跑了:{count}次");
-
-
-            //Console.WriteLine("迴圈測試 ========");
-            Console.WriteLine("分數評等 =============");
-
-           
-            for (int i = 0; i < 5; i++)
-            {
-                Console.Write($"第{i + 1}次輸入:");               
-
+                // 改成提前提示離開(-1 離開)
+                Console.Write($"第{i + 1}次輸入(-1:離開):");           
                 int score = int.Parse(Console.ReadLine()!);
+                if (score == -1) break;
 
                 Console.WriteLine($"分數為:{score}");
                 if (score == 100)
@@ -61,7 +45,35 @@
                     Console.WriteLine("評等:E");
                     Console.WriteLine("不及格!");
                 }
+
+                i++;
+                //Console.Write("是否離開?(y/n)");
+                //string answer = Console.ReadLine()!;
+                //if (answer =="y" || answer=="Y") break;             
             }
+
+
+
+            int x = 0;
+
+            // if => while 
+            // break     (強制跳離)
+            // continue  (跳過該次)
+            while (x < 11)
+            {
+                x++;
+                if (x == 4)
+                {
+                    //x++;
+                    continue;
+                }
+
+                Console.WriteLine($"x={x}");
+                //x++
+            }
+
+
+
         }
     }
 }
