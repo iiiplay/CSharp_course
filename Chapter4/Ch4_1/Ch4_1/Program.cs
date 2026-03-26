@@ -15,14 +15,22 @@
 
             // 宣告即使用
             //double[] scores = { 66.6, 78.8, 99.5, 100, 76.5 };
+            Random rand = new Random();
+
+            for (int i = 0; ; i++)
+            {
+                int number = rand.Next(20);
+                Console.WriteLine($"亂數{i + 1}:{number}");
+                if (number == 0) break;
+            }
 
             // 透過外部輸入
-            double[] scores = new double[10];
+            double[] scores = new double[5];
 
-            for(int i = 0; i < scores.Length; i++)
+            for (int i = 0; i < scores.Length; i++)
             {
-                Console.Write($"請輸入第{i+1}次分數:");
-                scores[i] =double.Parse(Console.ReadLine()!);
+                Console.Write($"請輸入第{i + 1}次分數:");
+                scores[i] = double.Parse(Console.ReadLine()!);
             }
 
             // 取值方式
@@ -50,7 +58,18 @@
                 total += score; //total=total+score
             }
 
-            Console.WriteLine($"總分為:{total} 平均分:{(total/scores.Length):F2}");
+            total = scores.Sum();
+            double avg = scores.Average();
+            int count = scores.Count(s => s >= 60);
+
+
+            Console.WriteLine($"總分為:{total} 平均分:{(total / scores.Length):F2}");
+
+            Console.WriteLine($"總分為:{total} 平均分:{avg:F2}  及格人數:{count}");
+
+
+          
+
         }
     }
 }

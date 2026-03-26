@@ -1,0 +1,7 @@
+  Console.WriteLine("===============================");
+  Console.WriteLine("1.新增事項");
+  Console.WriteLine("2.檢視事項");
+  Console.WriteLine("3.更新事項");
+  Console.WriteLine("4.刪除事項");
+  Console.WriteLine("5.離開");
+  Console.WriteLine("===============================");
