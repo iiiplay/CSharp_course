@@ -62,6 +62,9 @@
             double avg = scores.Average();
             int count = scores.Count(s => s >= 60);
 
+            scores.Sort();
+            scores.Reverse();
+
 
             Console.WriteLine($"總分為:{total} 平均分:{(total / scores.Length):F2}");
 
